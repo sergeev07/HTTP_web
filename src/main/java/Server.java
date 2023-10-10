@@ -82,12 +82,10 @@ public class Server {
 
 
     public void addHandler(String method, String path, Handler handler) {
-//      TODO addHandler
         if (!handlers.containsKey(method)) handlers.put(method, new ConcurrentHashMap<>());
         if (!handlers.get(method).containsKey(path)) handlers.get(method).put(path, handler);
     }
 
-    //            TODO defaul handler
 
     public void defaultHandler(Request request, BufferedOutputStream out) {
         String path = request.getPath();
